@@ -65,28 +65,29 @@ class GPT2Generator:
         # print(repr(prompt))
         return prompt
 
-    def result_replace(self, result):
+    #def result_replace(self, result):
         # print("\n\nBEFORE RESULT_REPLACE:")
         # print(repr(result))
 
-        result = cut_trailing_sentence(result)
-        if len(result) == 0:
-            return ""
-        first_letter_capitalized = result[0].isupper()
-        result = result.replace('."', '".')
-        result = result.replace("#", "")
-        result = result.replace("*", "")
-        result = result.replace("\n\n", "\n")
+        #result = cut_trailing_sentence(result)
+        #if len(result) == 0:
+        #    return ""
+        #first_letter_capitalized = result[0].isupper()
+        #result = result.replace('."', '".')
+        #result = result.replace("#", "")
+        #result = result.replace("*", "")
+        #result = result.replace("\n\n", "\n")
         # result = first_to_second_person(result)
+        #result = remove_profanity(result)
 
-        if not first_letter_capitalized:
-            result = result[0].lower() + result[1:]
+     #   if not first_letter_capitalized:
+      #      result = result[0].lower() + result[1:]
 
         #
         # print("\n\nAFTER RESULT_REPLACE:")
         # print(repr(result))
 
-        return result
+       # return result
 
     def generate_raw(self, prompt):
         context_tokens = self.enc.encode(prompt)
